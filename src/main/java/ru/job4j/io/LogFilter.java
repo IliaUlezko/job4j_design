@@ -2,7 +2,6 @@ package ru.job4j.io;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -21,25 +20,18 @@ public class LogFilter {
         return list;
     }
 
-    /**
-     * Метод работает не корректно,
-     * перезаписывает в файл последнюю
-     * итеррируемую строку.
-     * Подскажите, как исправить.
-     */
     public static void save(List<String> log, String file) {
-        Iterator<String> iterator = log.iterator();
-        while (iterator.hasNext()) {
             try (PrintWriter out = new PrintWriter(
                     new BufferedOutputStream(
                             new FileOutputStream(file)
                     ))) {
-                out.printf("%s%n", iterator.next());
+                for (String result : log) {
+                out.printf("%s%n", result);
+                }
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
-    }
 
     public static void main(String[] args) {
         LogFilter logFilter = new LogFilter();
