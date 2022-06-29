@@ -40,12 +40,14 @@ public class Config {
 
     public String value(String key) {
         Set<String> keys = values.keySet();
+        String result = "";
         for (String k : keys) {
             if (k.equals(key)) {
-                return values.get(key);
+                result = k;
+                break;
             }
         }
-        return "Value not found!";
+        return result.equals(key) ? values.get(key) : "Value not found!";
     }
 
     @Override
