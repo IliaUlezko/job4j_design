@@ -8,6 +8,7 @@ public class ArgsName {
     private final Map<String, String> values = new HashMap<>();
 
     private void validate(String str) {
+        String[] data = str.split("=", 2);
 
         if (!str.startsWith("-")) {
             throw new IllegalArgumentException("Wrong parameter.Parameter must start with \"-\".");
@@ -18,7 +19,9 @@ public class ArgsName {
         if (str.startsWith("-=")) {
             throw new IllegalArgumentException("Wrong parameter.Parameter cannot start with \"-=\".");
         }
-
+        if (str.endsWith("=") && data[1].isEmpty()) {
+            throw new IllegalArgumentException("Wrong parameter.");
+        }
     }
 
     public String get(String key) {

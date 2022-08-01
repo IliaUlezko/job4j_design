@@ -54,7 +54,13 @@ class ArgsNameTest {
 
     @Test
     void whenValueIsMissed() {
-        assertThatThrownBy(() -> ArgsName.of(new String[]{"key="}))
+        assertThatThrownBy(() -> ArgsName.of(new String[]{"-key="}))
                 .isInstanceOf(IllegalArgumentException.class);
+    }
+
+    @Test
+    void whenValueIsEquals() {
+        ArgsName jvm = ArgsName.of(new String[] {"-key==="});
+        assertThat(jvm.get("key")).isEqualTo("==");
     }
 }
