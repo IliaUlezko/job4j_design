@@ -51,4 +51,10 @@ class ArgsNameTest {
         assertThatThrownBy(() -> ArgsName.of(new String[]{"key=value"}))
                 .isInstanceOf(IllegalArgumentException.class);
     }
+
+    @Test
+    void whenValueIsMissed() {
+        assertThatThrownBy(() -> ArgsName.of(new String[]{"key="}))
+                .isInstanceOf(IllegalArgumentException.class);
+    }
 }
