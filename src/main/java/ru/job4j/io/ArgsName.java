@@ -16,7 +16,7 @@ public class ArgsName {
                 throw new IllegalArgumentException("Wrong parameter.Parameter must start with \"-\".");
             }
             if (!str.contains("=")) {
-                throw new IllegalArgumentException("Wrong parameter.Parameter must start with \"=\".");
+                throw new IllegalArgumentException("Wrong parameter.Parameter must contain with \"=\".");
             }
             if (str.startsWith("-=")) {
                 throw new IllegalArgumentException("Wrong parameter.Parameter cannot start with \"-=\".");
