@@ -26,7 +26,7 @@ public class Search {
         }
 
         if (!args[1].startsWith(".")) {
-            throw new IllegalArgumentException("Enter file extantion!");
+            throw new IllegalArgumentException("Enter file extension!");
         }
     }
 
