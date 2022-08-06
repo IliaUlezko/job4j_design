@@ -1,0 +1,18 @@
+Привет
+Nice to meet you!
+Юг
+Have a nice day!
+Север
+What is your name?
+стоп
+Восток
+Запад
+Круг
+продолжить
+Квадрат
+Hi!
+Север
+How are you?
+Юг
+Have a nice day!
+закончить
