@@ -48,7 +48,7 @@ public class CSVReader {
                                 writer.write(line.get(num));
                             }
                         }
-                        writer.write(System.lineSeparator());
+                        writer.write("\n");
                     }
                 }
             }
