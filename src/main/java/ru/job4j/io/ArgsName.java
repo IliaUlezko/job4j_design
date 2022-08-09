@@ -27,7 +27,7 @@ public class ArgsName {
     public String get(String key) {
 
         if (values.get(key) == null) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Missing output! Edit program arguments!");
         }
         return values.get(key);
     }
