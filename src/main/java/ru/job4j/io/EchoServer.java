@@ -19,12 +19,18 @@ public class EchoServer {
                     System.out.println(message);
 
                     String[] messages = message.split(" ");
+
                     if ("/?msg=Exit".equals(messages[1])) {
                         server.close();
-                    } else if ("/?msg=Hello".equals(messages[1])) {
-                        out.write("Hello\r\n\r\n".getBytes());
                     } else {
-                        out.write("What\r\n\r\n".getBytes());
+
+                        String[] value = messages[1].split("=");
+
+                        if (value.length == 1) {
+                            out.write("Message must have at least 1 character!\r\n\r\n".getBytes());
+                        } else {
+                            out.write(value[1].concat("\r\n\r\n").getBytes());
+                        }
                     }
                     for (String str = in.readLine(); str != null && !str.isEmpty(); str = in.readLine()) {
                         System.out.println(str);
