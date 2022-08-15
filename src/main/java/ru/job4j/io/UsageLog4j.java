@@ -13,5 +13,24 @@ public class UsageLog4j {
         LOG.info("info message");
         LOG.warn("warn message");
         LOG.error("error message");
+        System.out.println("***************");
+
+        byte first = 123;
+        short second = 14275;
+        int third = 2_134_657;
+        long fourth = 23_145_657_498L;
+
+        LOG.debug("First number equals {}, second equals {}.", first, second);
+        LOG.debug("Third number equals {}, fourth equals {}.", third, fourth);
+
+        float number = 123.14F;
+        double pi = 3.14159;
+
+        LOG.debug("First number equals {}, second equals {}.", number, pi);
+
+        char example = 'F';
+        boolean result = false;
+
+        LOG.debug("The character is {}, result equals {}.", example, result);
     }
 }
