@@ -1,16 +1,29 @@
 package ru.job4j.serialization.xml;
 
+import javax.xml.bind.annotation.*;
 import java.util.Arrays;
 
+@XmlRootElement(name = "employee")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Employee {
 
-    private final String name;
-    private final int age;
-    private final boolean distantWork;
+    @XmlAttribute
+    private String name;
+    @XmlAttribute
+    private int age;
+    @XmlAttribute
+    private boolean distantWork;
 
-    private final Department department;
+    @XmlElement
+    private Department department;
 
-    private final String[] contacts;
+    @XmlElementWrapper(name = "contacts")
+    @XmlElement(name = "contact")
+    private String[] contacts;
+
+    public Employee() {
+
+    }
 
     public Employee(String name, int age,
                     boolean distantWork, Department department,
