@@ -8,26 +8,24 @@ class NameLoadTest {
 
     @Test
     void whenArrayIsEmpty() {
-        String[] data = {};
         NameLoad nameLoad = new NameLoad();
-        assertThatThrownBy(() -> nameLoad.parse(data))
+        assertThatThrownBy(() -> nameLoad.parse(new String[] {}))
                 .isInstanceOf(IllegalArgumentException.class);
     }
 
     @Test
     void whenCheckExceptionMessage() {
-        String[] data = {};
         NameLoad nameLoad = new NameLoad();
-        assertThatThrownBy(() -> nameLoad.parse(data))
+        assertThatThrownBy(() -> nameLoad.parse(new String[]{}))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("Names array is empty");
     }
 
     @Test
     void whenIncorrectString() {
-        String[] data = {"din=don", "ping=pong", "meowmeow"};
         NameLoad nameLoad = new NameLoad();
-        assertThatThrownBy(() -> nameLoad.parse(data))
+        assertThatThrownBy(() -> nameLoad.parse(
+                new String[] {"din=don", "ping=pong", "meowmeow"}))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("does not contain");
 
@@ -35,9 +33,9 @@ class NameLoadTest {
 
     @Test
     void whenStringHasNoKey() {
-        String[] data = {"din=don", "ping=pong", "=meow"};
         NameLoad nameLoad = new NameLoad();
-        assertThatThrownBy(() -> nameLoad.parse(data))
+        assertThatThrownBy(() -> nameLoad.parse(
+                new String[] {"din=don", "ping=pong", "=meow"}))
                 .isInstanceOf(IllegalArgumentException.class)
                 .message()
                 .isNotEmpty();
@@ -45,9 +43,9 @@ class NameLoadTest {
 
     @Test
     void whenStringHasNoValue() {
-        String[] data = {"din=don", "ping=pong", "meow="};
         NameLoad nameLoad = new NameLoad();
-        assertThatThrownBy(() -> nameLoad.parse(data))
+        assertThatThrownBy(() -> nameLoad.parse(
+                new String[] {"din=don", "ping=pong", "meow="}))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("does not contain a value");
     }
