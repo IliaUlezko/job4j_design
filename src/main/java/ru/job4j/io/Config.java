@@ -8,11 +8,6 @@ import java.util.Map;
 import java.util.Set;
 import java.util.StringJoiner;
 
-/**
- * Не понимаю, где ловить
- * IllegalArgumentException
- */
-
 public class Config {
 
     private final String path;
