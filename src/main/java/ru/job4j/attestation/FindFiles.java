@@ -58,7 +58,7 @@ public class FindFiles {
                         new FileOutputStream(target))
         )) {
             for (Path path : list) {
-                pw.print(path.toString());
+                pw.println(path.toString());
             }
         } catch (Exception e) {
                 e.printStackTrace();
