@@ -53,10 +53,12 @@ public class FindFiles {
     public static void writeResult(ArgsName argsName) throws IOException {
         String target = argsName.get("o");
         List<Path> list = search(argsName);
-        try (PrintWriter pw = new PrintWriter(new BufferedOutputStream(new FileOutputStream(target)))) {
+        try (PrintWriter pw = new PrintWriter(
+                new BufferedOutputStream(
+                        new FileOutputStream(target))
+        )) {
             for (Path path : list) {
-                pw.write(path.toString());
-                pw.write(System.lineSeparator());
+                pw.print(path.toString());
             }
         } catch (Exception e) {
                 e.printStackTrace();
