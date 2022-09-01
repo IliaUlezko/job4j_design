@@ -22,7 +22,7 @@ where name like '%fish%';
 
 select name, avg_age
 from fauna
-where avd_age > 10000 AND avg_age < 21000;
+where avg_age > 10000 AND avg_age < 21000;
 
 select id, name, avg_age, discovery_date
 from fauna
