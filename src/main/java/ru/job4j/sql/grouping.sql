@@ -36,19 +36,19 @@ values (1, 2);
 insert into devices_people(device_id, people_id)
 values (1, 3);
 insert into devices_people(device_id, people_id)
+values (1, 4);
+insert into devices_people(device_id, people_id)
 values (2, 1);
 insert into devices_people(device_id, people_id)
 values (2, 2);
 insert into devices_people(device_id, people_id)
-values (3, 1);
+values (2, 3);
 insert into devices_people(device_id, people_id)
-values (3, 2);
+values (2, 4);
 insert into devices_people(device_id, people_id)
 values (3, 3);
 insert into devices_people(device_id, people_id)
-values (4, 3);
-insert into devices_people(device_id, people_id)
-values (4, 2);
+values (3, 2);
 
 select round(avg(price), 2) as "Средняя цена"
 from devices;
@@ -69,4 +69,3 @@ join devices as d
 on dp.device_id = d.id
 group by p.name
 having avg(price) > 5000;
-
