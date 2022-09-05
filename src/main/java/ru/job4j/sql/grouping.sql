@@ -50,10 +50,10 @@ values (3, 3);
 insert into devices_people(device_id, people_id)
 values (3, 2);
 
-select round(avg(price), 2) as "Средняя цена"
+select cast(avg(price) as float(24)) as "Средняя цена"
 from devices;
 
-select p.name, round(avg(price), 2)
+select p.name, cast(avg(price) as float(24))
 from devices_people as dp
 join people as p
 on dp.people_id = p.id
@@ -61,7 +61,7 @@ join devices as d
 on dp.device_id = d.id
 group by p.name;
 
-select p.name, round(avg(price), 2)
+select p.name, cast(avg(price) as float(24))
 from devices_people as dp
 join people as p
 on dp.people_id = p.id
