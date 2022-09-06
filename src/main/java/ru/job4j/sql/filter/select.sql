@@ -20,7 +20,7 @@ where product.price = (select(max(price)) from product);
 
 select type.name as "Тип продукта", count(product) as "Количество"
 from type
-join type on product.type_id = type.id
+join product on product.type_id = type.id
 group by type.name;
 
 select p.name as "Продукт", p.price as "Цена"
