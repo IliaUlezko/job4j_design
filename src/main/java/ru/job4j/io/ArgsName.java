@@ -11,13 +11,16 @@ public class ArgsName {
         String[] data = str.split("=", 2);
 
         if (!str.startsWith("-")) {
-            throw new IllegalArgumentException("Wrong parameter.Parameter must start with \"-\".");
+            throw new IllegalArgumentException(
+                    "Wrong parameter.Parameter must start with \"-\".");
         }
         if (!str.contains("=")) {
-            throw new IllegalArgumentException("Wrong parameter.Parameter must contain with \"=\".");
+            throw new IllegalArgumentException(
+                    "Wrong parameter.Parameter must contain with \"=\".");
         }
         if (str.startsWith("-=")) {
-            throw new IllegalArgumentException("Wrong parameter.Parameter cannot start with \"-=\".");
+            throw new IllegalArgumentException(
+                    "Wrong parameter.Parameter cannot start with \"-=\".");
         }
         if (str.endsWith("=") && data[1].isEmpty()) {
             throw new IllegalArgumentException("Wrong parameter.");
