@@ -50,7 +50,6 @@ public class ConsoleChat {
         saveLog(log);
     }
 
-
     private List<String> readPhrases() {
         List<String> rsl = new ArrayList<>();
         try (BufferedReader bufferedReader = new BufferedReader(

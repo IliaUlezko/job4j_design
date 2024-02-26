@@ -49,7 +49,6 @@ public class FindFiles {
             return result;
     }
 
-
     public static void writeResult(ArgsName argsName) throws IOException {
         String target = argsName.get("o");
         List<Path> list = search(argsName);

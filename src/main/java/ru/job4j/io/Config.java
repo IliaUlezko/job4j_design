@@ -16,6 +16,7 @@ public class Config {
     public Config(final String path) {
         this.path = path;
     }
+
     public void load() {
         try (BufferedReader in = new BufferedReader(
                 new FileReader(path)

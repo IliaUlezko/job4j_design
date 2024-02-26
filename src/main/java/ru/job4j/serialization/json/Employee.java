@@ -12,7 +12,6 @@ public class Employee {
 
     private final String[] contacts;
 
-
     public Employee(String name, int age,
                     boolean distantWork, Department department,
                     String[] contacts) {

@@ -57,7 +57,6 @@ public class CSVReader {
         }
     }
 
-
     private static void validate(ArgsName argsName) {
         File source = new File(argsName.get("path"));
         if (!source.exists()) {

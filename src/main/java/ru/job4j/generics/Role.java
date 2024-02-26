@@ -8,6 +8,7 @@ public class Role extends Base {
         super(id);
         this.name = name;
     }
+
     public String getName() {
         return name;
     }

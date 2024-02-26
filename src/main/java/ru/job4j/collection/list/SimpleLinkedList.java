@@ -12,7 +12,6 @@ public class SimpleLinkedList<E> implements List<E> {
     private Node<E> first;
     private Node<E> last;
 
-
     private static class Node<E> {
         E data;
         Node<E> next;
